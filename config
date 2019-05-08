@@ -21,7 +21,7 @@ bindsym $mod+d exec rofi -modi drun -show drun
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 
-bindsym $mod+BackSpace exec i3lock -t -i Pictures/lock.png
+bindsym $mod+BackSpace exec i3lock -t -i ~/Pictures/lock.png
 
 # change focus
 bindsym $mod+j focus left
@@ -146,8 +146,6 @@ bar {
 
 bindsym --whole-window $mod+button2 kill
 
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
-
 bindsym $mod+Ctrl+f exec firefox
 bindsym $mod+Ctrl+p exec postman
 bindsym $mod+Ctrl+r exec remmina
@@ -163,10 +161,10 @@ exec_always setxkbmap -layout us,am,ru -variant ,phonetic-alt,phonetic -option g
 
 force_xinerama yes
 exec xrandr --output VGA-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal 
-exec feh --bg-scale ~/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -c -b
-exec --no-startup-id sshfs dev:/var/www ./devserver/
+exec --no-startup-id sshfs dev:/var/www ~/devserver/
 
 

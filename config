@@ -21,13 +21,7 @@ bindsym $mod+d exec rofi -modi drun -show drun
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 
-bindsym $mod+BackSpace exec i3lock -t -i ~/Pictures/lock.png
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+l exec i3lock -t -i ~/Pictures/lock.png
 
 bindsym $mod+Tab exec rofi -show window
 
@@ -36,7 +30,6 @@ for_window [class="^.*"] border pixel 0
 
 exec --no-startup-id volumeicon &
 
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -146,6 +139,8 @@ bar {
 
 bindsym --whole-window $mod+button2 kill
 
+exec --no-startup-id feh --bg-scale --no-xinerama ~/Pictures/wallpaper.png
+
 bindsym $mod+Ctrl+f exec firefox
 bindsym $mod+Ctrl+p exec postman
 bindsym $mod+Ctrl+r exec remmina
@@ -160,11 +155,8 @@ bindsym XF86AudioMute exec amixer set Master toggle
 exec_always setxkbmap -layout us,am,ru -variant ,phonetic-alt,phonetic -option grp:alt_shift_toggle -variant winkeys
 
 force_xinerama yes
-exec xrandr --output VGA-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal 
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec xrandr --output VGA-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off 
 
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -c -b
 exec --no-startup-id sshfs dev:/var/www ~/devserver/
-
-

@@ -159,4 +159,6 @@ exec xrandr --output VGA-1 --primary --mode 1920x1080 --pos 1920x0 --rotate norm
 
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -c -b
-exec --no-startup-id sshfs dev:/var/www ~/devserver/
+
+# Enabling screenshot
+bindsym Control+Print exec gnome-screenshot -i
